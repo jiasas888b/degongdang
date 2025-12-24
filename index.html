@@ -12,27 +12,56 @@
     
   }
   .inforbox{
-    position: fixed;
     background-color: rgba(255,255,255,0.2);
     width: 250px;
     height: 150px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px;
+    margin-top: 10px;
+  }
+  .search{
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
   }
   </style>
   <body>	
   <!--标题-->
-	<center><h1 id="title" class="title">德意志社会主义工人党-43校区</h1></center>
+	<center>
+	<h1 id="title" class="title">德意志社会主义工人党-43校区</h1>
+	<input id="search_box" class="search" type="search" placeholder="输入搜索" />
+	</center>
 	<!--主要网站内容-->
 	<div id="infor_box" class="inforbox">
 	  <p>这是德意志社会主义工人党43区的官网</p>
 	  <p>网站建立于2025.12.22</p>
 	  <p>党成立于2025.12.12</p>
 	</div>
+	<!--新闻-->
+	<h3>新闻</h3>
+	<p>暂无...</p>
   </body>
   <!--js-->
   <script>
-    
+    //搜索
+  function ok(){
+    let find = document.getElementById("search_box").value;
+    if(find == "你好"){
+        alert("你好");
+    }
+    else if(find == "德工党"){
+      alert("德工党是在2025.12.12成立的党");
+    }
+    else{
+        alert("暂为制作"+find);
+    }
+  }  
+  //enter搜索
+  document.getElementById("search_box").addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        ok();
+    }
+  });
   </script>
 </html>
